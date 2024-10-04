@@ -25,12 +25,16 @@ body {
 
 /*header*/
 header {
-    background-color: brown;
+    background-color: lightcoral;
+    }
+
+h1 {
+    font-family: 'Oswald', sans-serif;
 }
 
 /*Main content*/
 main {
-    background-color: coral;
+    background-color: lightblue;
     /*This is to make the main element take up any surplus space to push down the footer*/
     flex: 1 0 auto; /*It should not shrink when the screen is too small to show all
 the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
@@ -38,5 +42,5 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
 
 /*Footer*/
 footer {
-    background-color: aquamarine;
+    background-color: orange;
 }
