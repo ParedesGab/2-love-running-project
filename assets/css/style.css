@@ -8,6 +8,17 @@
     element, it will be applied to the entire element, including the border.*/
 }
 
+/* General styles */
+body {
+ min-height: 100vh; /*Using min-height will allow it to stretch larger than the height of the
+ screen when there is enough content on the page that the user needs to scroll.*/
+ display:flex;
+ flex-direction:column; /*so our body elements, in this case header, main and footer, will still show underneath each other.*/
+
+ /*Generic project styles*/
+ color: #3a3a3a;
+}
+
 /*header*/
 header {
     background-color: brown;
@@ -16,6 +27,9 @@ header {
 /*Main content*/
 main {
     background-color: coral;
+    /*This is to make the main element take up any surplus space to push down the footer*/
+    flex: 1 0 auto; /*It should not shrink when the screen is too small to show all
+the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
 }
 
 /*Footer*/
