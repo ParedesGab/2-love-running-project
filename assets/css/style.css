@@ -25,11 +25,18 @@ body {
 
 /*header*/
 header {
-    background-color: lightcoral;
+    background-color: #ffffff;
+    padding: 0 1rem; /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
+    position:fixed;  /*this is to keep the header always on top*. Note: the position property has affected the width of the element!!
+    This is because it reverted to content width when we made the position fixed. That is why below, I gave the witdh of 100%*/
+    z-index: 99; /*99 is a HIGH index, it is to make sure it's layered on top of any other elements*/
+    width:100%;
+    box-shadow: 0 2px 2px #3a3a3a; /* we also used this color in the body element above*/
     }
 
 h1 {
     font-family: 'Oswald', sans-serif;
+    
 }
 
 /*Main content*/
