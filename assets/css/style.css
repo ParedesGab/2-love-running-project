@@ -34,10 +34,18 @@ header {
     box-shadow: 0 2px 2px #3a3a3a; /* we also used this color in the body element above*/
     }
 
+header a {
+    text-decoration: none; /*this will remove the underlines from ALL the a in a header*/
+    color:inherit; /*let's also set the text color to inherit from body.
+    This will take care of the default link color being applied by the browser.*/
+}
+
 h1 {
     font-family: 'Oswald', sans-serif;
-    
-}
+    text-transform:uppercase; 
+    letter-spacing: 2px; /*this provides a bit of breathing space between the letters*/
+    color:#252525
+        }
 
 /*Main content*/
 main {
