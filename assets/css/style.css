@@ -106,6 +106,7 @@ main {
     /*This is to make the main element take up any surplus space to push down the footer*/
     flex: 1 0 auto; /*It should not shrink when the screen is too small to show all
 the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
+margin-top: 47px;     /*this is to push this content down, otherwise is covered by the head*/
 }
 
 /*Footer*/
