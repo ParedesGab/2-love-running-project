@@ -32,6 +32,10 @@ header {
     z-index: 99; /*99 is a HIGH index, it is to make sure it's layered on top of any other elements*/
     width:100%;
     box-shadow: 0 2px 2px #3a3a3a; /* we also used this color in the body element above*/
+    display: flex;
+    justify-content:space-between;
+    align-items: baseline;
+
     }
 
 header a {
@@ -74,7 +78,26 @@ nav {
     width:100%;
     box-shadow: 0 2px 2px #3a3a3a;
     display:none; /*this is so the navbars are hidden until the user clicks to open them*/
+    top:100%; /*Effectively, this tells the navigation element that the top of the element
+    should start at the bottom of its parent.*/
     
+}
+
+/*Checkboxes have a PSEUDOCLASS that indicates when they are checked*/
+/*Nav-toggle*/
+#nav-toggle:checked~nav {           /*the tilde ~ is the adjoining element we want to target
+                                        In this case, when we check the box, we want the nav to appear*/
+    display:block;
+}
+
+/*hide the checkbox*/
+#nav-toggle {
+    display:none;   
+}
+
+/*Make the label X larger */
+.nav-toggle-label {
+font-size:2rem;
 }
 
 /*Main content*/
