@@ -62,6 +62,21 @@ h1 {
     border-bottom: 1px solid #3a3a3a;
 }
 
+/*Navbar styles with dropdown toggle*/
+nav {
+    position:absolute; /*Absolute positioning takes an element outside the normal
+    flow of the page structure.
+    It is positioned relative to the nearest positioned ancestor
+    in our case, the header.*/
+    left:0px;
+    background-color: #ffffff;
+    padding: 0 1rem; /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
+    width:100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display:none; /*this is so the navbars are hidden until the user clicks to open them*/
+    
+}
+
 /*Main content*/
 main {
     background-color: lightblue;
