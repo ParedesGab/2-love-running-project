@@ -157,38 +157,66 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     /*So it does not cover the full width of the screen*/
     padding-left: 1rem;
     min-height: 200px;
-    padding-top:40px;
+    padding-top: 40px;
 }
 
 /*set the cover-text to white*/
-#cover-text>h2,#cover-text>h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff;
 }
 
 #reasons {
-margin: 20px auto; /*this is top and bottom firs, auto means center*/
-width:90%;
+    margin: 20px auto;
+    /*this is top and bottom firs, auto means center*/
+    width: 90%;
 }
 
-#reasons > h2 {
+#reasons>h2 {
     font-size: 280%;
     margin-bottom: 20px;
-    text-align:center;
+    text-align: center;
 }
 
-#benefits-physical > div, #benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     margin-bottom: 20px;
     line-height: 20px;
 }
 
 /*targeting the descendant of all benefits*/
 #benefits p {
-    padding:0 20px;
+    padding: 0 20px;
 }
 
-hr {
-border-top: 1px solid #3a3a3a;
-margin:5px 0;
+#benefits li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#benefits hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+#circle-cover-bg {
+    background: url("../images/reasons-image.webp") no-repeat top center/cover;
+    /*it is covering the entire div*/
+    /*note that without the following styles, the image does not appear because top=90vw, and center is half of the width*/
+    height: 90vw;
+    width: 90vw;       /*until here, the figure is a square*/
+    margin-bottom: 20px;
+    /*Make it a circle*/
+    border-radius: 50%;
+    max-width: 300px;     /*this will ensure that the image will not be more than 300 px wide or long*/
+    max-height: 300px;
+}
+
+/*Add flexbox properties to the image div*/
+#benefits-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*Footer*/
@@ -274,8 +302,8 @@ margin:5px 0;
 
     /*target the size of the cover-text*/
     #cover-text {
-        width:300px;
-        right:50px;
+        width: 300px;
+        right: 50px;
     }
 
 }
