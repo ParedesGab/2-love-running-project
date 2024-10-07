@@ -117,7 +117,7 @@ nav {
 
 /*Main content*/
 main {
-    background-color: lightblue;
+
     /*This is to make the main element take up any surplus space to push down the footer*/
     flex: 1 0 auto;
     /*It should not shrink when the screen is too small to show all
@@ -126,12 +126,27 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     /*this is to push this content down, otherwise is covered by the head*/
 }
 
+/* Hero section */
+#hero {
+    height: 600px;
+    /*to make sure the image has enough space*/
+    width: 100%;
+    /*so it spans the entire width of the screen*/
+    /*background-color: lightgreen; this is just to see how the sections looks, it will be replaced with an image*/
+    
+    /*I am currently in the CSS folder, thus just go up to assets*/
+    /*center center: means centered horizontally and vertically (=position) and
+    cover means that it  automatically size itself so it covers the entire hero section without distorting (=size) */
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
+}
+
 /*Footer*/
 /*footer {
     background-color: orange;
 }*/
 
-#social-networks {       /*Note, this is not targeting the icons themselves, but the whole ul section*/
+#social-networks {
+    /*Note, this is not targeting the icons themselves, but the whole ul section*/
     text-align: center;
     /*this is to center our icons. Notice that they are basically a font*/
     padding: 20px 0;
@@ -151,7 +166,7 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     font-size: 160%;
     padding: 5%;
     color: #3a3a3a;
-    
+
 }
 
 /*Media Query always at the end *| tablets and larger (768px and up*/
