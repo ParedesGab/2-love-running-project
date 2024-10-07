@@ -131,18 +131,27 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     background-color: orange;
 }*/
 
-#social-networks {
+#social-networks {       /*Note, this is not targeting the icons themselves, but the whole ul section*/
     text-align: center;
+    /*this is to center our icons. Notice that they are basically a font*/
     padding: 20px 0;
+    /* this is to add breathing space above and below our icons*/
     display: flex;
+    /*to display the icons in a row*/
     justify-content: space-evenly;
+    /*to display the icons evenly along the footer*/
     list-style-type: none;
+    /*remove the bullet points*/
 }
 
 #social-networks i {
+    /*this is styling the icons themselves: I could add font-size above, but
+    to keep an order of "styling the icons themselves, I can also separate the style*/
+
     font-size: 160%;
     padding: 5%;
     color: #3a3a3a;
+    
 }
 
 /*Media Query always at the end *| tablets and larger (768px and up*/
@@ -198,9 +207,11 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     }
 
 }
+
 /*Media query for laptops and larger (992px and up)*/
 @media screen and (min-width:992px) {
-    #menu a:hover {                     /*when hovering over the links, show an underline to see
+    #menu a:hover {
+        /*when hovering over the links, show an underline to see
                                         that it is clickable*/
         border-bottom: 1px solid #3a3a3a;
 
