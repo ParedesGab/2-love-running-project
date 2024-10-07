@@ -176,9 +176,19 @@ footer {
     }
 
     /*Push main content down to accomodate larger header*/
-    main {             /*As you can see in devtools/browser the top of the main content is hidden again. 
+    main {
+        /*As you can see in devtools/browser the top of the main content is hidden again. 
                         This is because, now the eader is 75 px high (line height above. Thus, 
                         to show it we need to change the margin-top too*/
-    margin-top: 79px;
-   }
+        margin-top: 79px;
+    }
+
+}
+/*Media query for laptops and larger (992px and up)*/
+@media screen and (min-width:992px) {
+    #menu a:hover {                     /*when hovering over the links, show an underline to see
+                                        that it is clickable*/
+        border-bottom: 1px solid #3a3a3a;
+
+    }
 }
