@@ -13,43 +13,52 @@
 
 /* General styles */
 body {
- min-height: 100vh; /*Using min-height will allow it to stretch larger than the height of the
+    min-height: 100vh;
+    /*Using min-height will allow it to stretch larger than the height of the
  screen when there is enough content on the page that the user needs to scroll.*/
- display:flex;
- flex-direction:column; /*so our body elements, in this case header, main and footer, will still show underneath each other.*/
+    display: flex;
+    flex-direction: column;
+    /*so our body elements, in this case header, main and footer, will still show underneath each other.*/
 
- /*Generic project styles*/
- color: #3a3a3a;
- font-family: 'Lato', sans-serif;
+    /*Generic project styles*/
+    color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
 }
 
 /*header*/
 header {
     background-color: #ffffff;
-    padding: 0 1rem; /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
-    position:fixed;  /*this is to keep the header always on top*. Note: the position property has affected the width of the element!!
+    padding: 0 1rem;
+    /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
+    position: fixed;
+    /*this is to keep the header always on top*. Note: the position property has affected the width of the element!!
     This is because it reverted to content width when we made the position fixed. That is why below, I gave the witdh of 100%*/
-    z-index: 99; /*99 is a HIGH index, it is to make sure it's layered on top of any other elements*/
-    width:100%;
-    box-shadow: 0 2px 2px #3a3a3a; /* we also used this color in the body element above*/
+    z-index: 99;
+    /*99 is a HIGH index, it is to make sure it's layered on top of any other elements*/
+    width: 100%;
+    box-shadow: 0 2px 2px #3a3a3a;
+    /* we also used this color in the body element above*/
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: baseline;
 
-    }
+}
 
 header a {
-    text-decoration: none; /*this will remove the underlines from ALL the a in a header*/
-    color:inherit; /*let's also set the text color to inherit from body.
+    text-decoration: none;
+    /*this will remove the underlines from ALL the a in a header*/
+    color: inherit;
+    /*let's also set the text color to inherit from body.
     This will take care of the default link color being applied by the browser.*/
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
-    text-transform:uppercase; 
-    letter-spacing: 2px; /*this provides a bit of breathing space between the letters*/
-    color:#252525
-        }
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*this provides a bit of breathing space between the letters*/
+    color: #252525
+}
 
 #menu {
     font-size: 110%;
@@ -58,8 +67,9 @@ h1 {
 }
 
 /*I want to target the individual lists now*/
-#menu > li {
-    margin-bottom:1em; /*I use the margin to separate the individual lists, and 1 em is approximately 17px*/
+#menu>li {
+    margin-bottom: 1em;
+    /*I use the margin to separate the individual lists, and 1 em is approximately 17px*/
 }
 
 .active {
@@ -68,45 +78,52 @@ h1 {
 
 /*Navbar styles with dropdown toggle*/
 nav {
-    position:absolute; /*Absolute positioning takes an element outside the normal
+    position: absolute;
+    /*Absolute positioning takes an element outside the normal
     flow of the page structure.
     It is positioned relative to the nearest positioned ancestor
     in our case, the header.*/
-    left:0px;
+    left: 0px;
     background-color: #ffffff;
-    padding: 0 1rem; /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
-    width:100%;
+    padding: 0 1rem;
+    /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
+    width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-    display:none; /*this is so the navbars are hidden until the user clicks to open them*/
-    top:100%; /*Effectively, this tells the navigation element that the top of the element
+    display: none;
+    /*this is so the navbars are hidden until the user clicks to open them*/
+    top: 100%;
+    /*Effectively, this tells the navigation element that the top of the element
     should start at the bottom of its parent.*/
-    
+
 }
 
 /*Checkboxes have a PSEUDOCLASS that indicates when they are checked*/
 /*Nav-toggle*/
-#nav-toggle:checked~nav {           /*the tilde ~ is the adjoining element we want to target
+#nav-toggle:checked~nav {
+    /*the tilde ~ is the adjoining element we want to target
                                         In this case, when we check the box, we want the nav to appear*/
-    display:block;
+    display: block;
 }
 
 /*hide the checkbox*/
 #nav-toggle {
-    display:none;   
+    display: none;
 }
 
 /*Make the label X larger */
 .nav-toggle-label {
-font-size:2rem;
+    font-size: 2rem;
 }
 
 /*Main content*/
 main {
     background-color: lightblue;
     /*This is to make the main element take up any surplus space to push down the footer*/
-    flex: 1 0 auto; /*It should not shrink when the screen is too small to show all
+    flex: 1 0 auto;
+    /*It should not shrink when the screen is too small to show all
 the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
-margin-top: 47px;     /*this is to push this content down, otherwise is covered by the head*/
+    margin-top: 47px;
+    /*this is to push this content down, otherwise is covered by the head*/
 }
 
 /*Footer*/
@@ -117,26 +134,51 @@ footer {
 /*Media Query always at the end *| tablets and larger (768px and up*/
 @media screen and (min-width:768px) {
     nav {
-        display: block;   /*this means that the nav bar will always be displayed so we can see all links*/
-        position:relative; /*this will place the nav bar inside the header*/
-        width:fit-content; /*this pushes the logo "love running" at the left,
+        display: block;
+        /*this means that the nav bar will always be displayed so we can see all links*/
+        position: relative;
+        /*this will place the nav bar inside the header*/
+        width: fit-content;
+        /*this pushes the logo "love running" at the left,
         the checkbox X at the middle and the nav links at the righ: FIT content */
         box-shadow: none;
-        padding-right: 1rem; /*so the menu items (nav links) do not stick to the edge of the screen*/
+        padding-right: 1rem;
+        /*so the menu items (nav links) do not stick to the edge of the screen*/
     }
 
-    #menu {                  /*note that #menu >li did not create the same yield*/
-        display:flex;
-        
-            }
-   /*Targeting EACH list*/
-   #menu >li {
-    padding-left: 1rem;    /*this just gives a bit of breathing space between the Menu links*/
-   }
+    #menu {
+        /*note that #menu >li did not create the same yield*/
+        display: flex;
 
-   .nav-toggle-label {
-    display: none;
+    }
 
+    /*Targeting EACH list*/
+    #menu>li {
+        padding-left: 1rem;
+        /*this just gives a bit of breathing space between the Menu links*/
+    }
+
+    .nav-toggle-label {
+        display: none;
+        /*this one will hide the X */
+    }
+
+    /*Make logo larger*/
+    #logo {
+        /*IMPORTANT- I add the logo here and not up, because this the responsive design.
+                            The logo will become wider when the screen is >768px*/
+        font-size: 280%;
+        /*we make it larger*/
+        line-height: 75px;
+        /*is the whole vertical line of the logo, 75px gives more space at the top*/
+        margin: 0 0.5rem;
+        /*this just gives a bit more margin to the left and right*/
+    }
+
+    /*Push main content down to accomodate larger header*/
+    main {             /*As you can see in devtools/browser the top of the main content is hidden again. 
+                        This is because, now the eader is 75 px high (line height above. Thus, 
+                        to show it we need to change the margin-top too*/
+    margin-top: 79px;
    }
-    
 }
