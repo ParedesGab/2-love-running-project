@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
 
 </head>
 
@@ -28,8 +29,10 @@
         </a>
         <!--Toggling-->
         <input type="checkbox" id="nav-toggle" name="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">X</label> <!--X will be replaced with an icon-->
-        
+        <label for="nav-toggle" class="nav-toggle-label"><i class="fas fa-bars"></i></label>
+        <!--before the <i class="fas fa-bars"></i> icon there was the placeholder "X", but was replaced
+        with the icon from font awesome-->
+
         <!--Navigation-->
         <nav>
             <ul id="menu">
@@ -44,8 +47,35 @@
     <main>Main content</main>
 
     <!--Footer-->
-    <footer>Footer</footer>
+    <footer>
+        <ul id="social-networks">
+            <li>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebook page (opens in a new tab)">
+                    <i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page (opens in a new tab)">
+                    <i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our YouTube page (opens in a new tab)">
+                    <i class="fab fa-youtube"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Instagram page (opens in a new tab)">
+                    <i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+    </footer>
 
+    <!-- Javascript Font Awesome Kit -- | Place it at the end of the html file!-->
+    
+       <!-- CI LINK: <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>-->
+       <script src="https://kit.fontawesome.com/dd9cffa4c0.js" crossorigin="anonymous"></script>
+    
 </body>
-
 </html>
