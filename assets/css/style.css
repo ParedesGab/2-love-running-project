@@ -113,3 +113,30 @@ margin-top: 47px;     /*this is to push this content down, otherwise is covered 
 footer {
     background-color: orange;
 }
+
+/*Media Query always at the end *| tablets and larger (768px and up*/
+@media screen and (min-width:768px) {
+    nav {
+        display: block;   /*this means that the nav bar will always be displayed so we can see all links*/
+        position:relative; /*this will place the nav bar inside the header*/
+        width:fit-content; /*this pushes the logo "love running" at the left,
+        the checkbox X at the middle and the nav links at the righ: FIT content */
+        box-shadow: none;
+        padding-right: 1rem; /*so the menu items (nav links) do not stick to the edge of the screen*/
+    }
+
+    #menu {                  /*note that #menu >li did not create the same yield*/
+        display:flex;
+        
+            }
+   /*Targeting EACH list*/
+   #menu >li {
+    padding-left: 1rem;    /*this just gives a bit of breathing space between the Menu links*/
+   }
+
+   .nav-toggle-label {
+    display: none;
+
+   }
+    
+}
