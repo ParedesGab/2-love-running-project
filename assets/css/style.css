@@ -25,6 +25,16 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*this provides a bit of breathing space between the letters*/
+    color: #252525
+}
+
 /*header*/
 header {
     background-color: #ffffff;
@@ -50,14 +60,6 @@ header a {
     color: inherit;
     /*let's also set the text color to inherit from body.
     This will take care of the default link color being applied by the browser.*/
-}
-
-h1 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    /*this provides a bit of breathing space between the letters*/
-    color: #252525
 }
 
 #menu {
@@ -133,11 +135,34 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     width: 100%;
     /*so it spans the entire width of the screen*/
     /*background-color: lightgreen; this is just to see how the sections looks, it will be replaced with an image*/
-    
+
     /*I am currently in the CSS folder, thus just go up to assets*/
     /*center center: means centered horizontally and vertically (=position) and
     cover means that it  automatically size itself so it covers the entire hero section without distorting (=size) */
     background: url("../images/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+    /*if you do not do it, then the cover-text below will not be positioned relative to it*/
+}
+
+/*this is the id of the div hero section*/
+#cover-text {
+    background-color: rgba(241, 109, 107, .7);
+    /*this final 0.7 value sets the opacitiy to it is semi transparent*/
+    font-size: 130%;
+    position: absolute;
+    /*NOTE this is linked to the position:relative of the hero section*/
+    bottom: 30px;
+    /*So it does not stick directly to the bottom of the image*/
+    width: 80%;
+    /*So it does not cover the full width of the screen*/
+    padding-left: 1rem;
+    min-height: 200px;
+    padding-top:40px;
+}
+
+/*set the cover-text to white*/
+#cover-text>h2,#cover-text>h3 {
+    color: #ffffff;
 }
 
 /*Footer*/
@@ -219,6 +244,12 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
                         This is because, now the eader is 75 px high (line height above. Thus, 
                         to show it we need to change the margin-top too*/
         margin-top: 79px;
+    }
+
+    /*target the size of the cover-text*/
+    #cover-text {
+        width:300px;
+        right:50px;
     }
 
 }
