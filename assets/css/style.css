@@ -258,6 +258,16 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     color: #fafafa;
 }
 
+/* Gallery page */
+#photos img {
+    width: 100%;
+    line-height: 1em;
+}
+
+#photos {
+    line-height: 0;
+}
+
 
 /*Footer*/
 /*footer {
