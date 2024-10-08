@@ -32,7 +32,7 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     /*this provides a bit of breathing space between the letters*/
-    color: #252525
+    color: #252525;
 }
 
 /*header*/
@@ -85,11 +85,12 @@ nav {
     flow of the page structure.
     It is positioned relative to the nearest positioned ancestor
     in our case, the header.*/
-    left: 0px;
     background-color: #ffffff;
+    width: 100%;
+    left: 0;
     padding: 0 1rem;
     /* top and bottom=0, left and right=1rem -- this is to prevent the text from sticking to the side of the screen*/
-    width: 100%;
+
     box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     /*this is so the navbars are hidden until the user clicks to open them*/
@@ -119,7 +120,6 @@ nav {
 
 /*Main content*/
 main {
-
     /*This is to make the main element take up any surplus space to push down the footer*/
     flex: 1 0 auto;
     /*It should not shrink when the screen is too small to show all
@@ -139,7 +139,7 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     /*I am currently in the CSS folder, thus just go up to assets*/
     /*center center: means centered horizontally and vertically (=position) and
     cover means that it  automatically size itself so it covers the entire hero section without distorting (=size) */
-    background: url("../images/hero-image.webp") no-repeat center center/cover;
+    background: url('../images/hero-image.webp') no-repeat center center/cover;
     position: relative;
     /*if you do not do it, then the cover-text below will not be positioned relative to it*/
 }
@@ -155,9 +155,9 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     /*So it does not stick directly to the bottom of the image*/
     width: 80%;
     /*So it does not cover the full width of the screen*/
-    padding-left: 1rem;
     min-height: 200px;
     padding-top: 40px;
+    padding-left: 10px;
 }
 
 /*set the cover-text to white*/
@@ -166,22 +166,24 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     color: #ffffff;
 }
 
+/* Reasons section */
 #reasons {
+    width: 90%;
     margin: 20px auto;
     /*this is top and bottom firs, auto means center*/
-    width: 90%;
 }
 
-#reasons>h2 {
-    font-size: 280%;
+#reasons h2 {
     margin-bottom: 20px;
     text-align: center;
+    font-size: 280%;
 }
 
 #benefits-physical>div,
 #benefits-mental>div {
-    margin-bottom: 20px;
     line-height: 20px;
+    margin-bottom: 20px;
+
 }
 
 /*targeting the descendant of all benefits*/
@@ -195,15 +197,17 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
 }
 
 #circle-cover-bg {
-    background: url("../images/reasons-image.webp") no-repeat top center / cover;
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
     /*it is covering the entire div*/
     /*note that without the following styles, the image does not appear because top=90vw, and center is half of the width*/
     height: 90vw;
-    width: 90vw;       /*until here, the figure is a square*/
+    width: 90vw;
+    /*until here, the figure is a square*/
     margin-bottom: 20px;
     /*Make it a circle*/
     border-radius: 50%;
-    max-width: 300px;     /*this will ensure that the image will not be more than 300 px wide or long*/
+    max-width: 300px;
+    /*this will ensure that the image will not be more than 300 px wide or long*/
     max-height: 300px;
 }
 
@@ -213,6 +217,44 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     align-items: center;
     justify-content: center;
 }
+
+/* Meetup times section */
+#times {
+    /*place the image dublin as background of the whole times div*/
+    background: url('../images/dublin-city.webp') no-repeat center/cover;
+
+    /* Handles responsivity without the need for a media query */
+    /*Wrap the 5 divs so they fit in one row*/
+    /*Important: each 5 div still need to be styled flex individually for this to work, see A) below*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Target the individual divs within times*/
+#times div {
+    /* Target the color of these 5 divs */
+    color: #fafafa;
+    /* Creates a black transparent background of the Dublin image */
+    background-color: rgba(0, 0, 0, .6);
+    /* Give the text within the boxes some breating space */
+    padding: 15px;
+    text-align: center;
+
+    /* A)*/
+    /* Flex:grow - Expand each div when there is enough space on the screen */
+    /*Important: This will not wrap on screens of less than 400px wide.*/
+    flex-basis: 200px;
+    flex-grow: 1;
+
+    /* Creates a grid/white edges for each divs over the dublin image behind it*/
+    border: 2px solid white;
+}
+
+#times h3 {
+    /* Override the heading colour set in general styles */
+    color: #fafafa;
+}
+
 
 /*Footer*/
 /*footer {
@@ -302,19 +344,19 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     }
 
     /*Reasons section*/
-    #benefits-physical, 
+    #benefits-physical,
     #benefits-mental {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    #benefits-physical > div, 
-    #benefits-mental > div {
+    #benefits-physical>div,
+    #benefits-mental>div {
         width: 75%;
     }
 
-    #benefits-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
     }
@@ -332,28 +374,30 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
 
 /*Media query for screen (1200px)*/
 @media screen and (min-width:1200px) {
+
     /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
     }
 
-    #benefits > div {
+    #benefits>div {
         flex: 1;
     }
 
     #benefits-image {
-        order:0;
+        order: 0;
     }
 
     #benefits-mental {
-        order:1;
+        order: 1;
     }
-    #benefits-mental > div {
+
+    #benefits-mental>div {
         align-self: flex-start;
     }
 
-    #benefits-physical > div {
+    #benefits-physical>div {
         align-self: flex-end;
     }
 }
