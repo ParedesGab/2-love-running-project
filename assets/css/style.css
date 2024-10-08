@@ -328,6 +328,14 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
     color:#fafafa;
     }
 
+.text-input:hover {
+        border-color: #f16c6b;
+    }  
+    
+.join-button:hover {
+        background-color: #fafafa;
+        color: #454b1b;
+    }
 
 /*Footer*/
 /*footer {
@@ -415,7 +423,7 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
         /*As you can see in devtools/browser the top of the main content is hidden again. 
                         This is because, now the eader is 75 px high (line height above. Thus, 
                         to show it we need to change the margin-top too*/
-        margin-top: 79px;
+        margin-top: 79px;}
 
 
         /*Hero - target the size of the cover-text*/
@@ -446,7 +454,17 @@ the content, so we'll use the flex shorthand and set it to 1 0 auto.*/
         #photos {
             column-count: 3;
         }
-
+        /* Media query of the signup section for tablets and up */
+        #signup {
+            background-position: center;
+            position: relative;
+        }
+        #signup-form {
+            max-width: 400px;
+            position: absolute;
+            left: 10%;
+            top: 150px;
+        }
     }
 
     /*Media query for laptops and larger (992px and up)*/
